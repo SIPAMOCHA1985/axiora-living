@@ -40,6 +40,18 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Payment badges */}
+      <div className="relative z-10 mt-12 flex flex-wrap justify-center items-center gap-3 px-6">
+        {["Credit Card", "Stripe", "Square", "Financing 0%", "₿ Crypto Accepted"].map((badge) => (
+          <span
+            key={badge}
+            className="text-[10px] tracking-widest uppercase font-sans px-4 py-1.5 border border-white/20 text-white/50 hover:border-[#C9A96E]/50 hover:text-[#C9A96E] transition-colors duration-300"
+          >
+            {badge}
+          </span>
+        ))}
+      </div>
+
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50">
         <span className="text-[10px] tracking-[0.3em] uppercase font-sans">Scroll</span>

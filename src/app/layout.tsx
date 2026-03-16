@@ -30,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfair.variable} ${inter.variable} antialiased`}>
         {children}
+        <script src="//code.tidio.co/pwvekx2f4bvhqv1yw0dxy1bx1pacmbea.js" async></script>
       </body>
     </html>
   );

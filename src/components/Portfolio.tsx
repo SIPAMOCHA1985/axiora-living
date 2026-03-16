@@ -1,75 +1,98 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+const categories = ["All", "Kitchens", "Bathrooms", "Floors"];
+
 const projects = [
-  {
-    title: "The Birchwood Residence",
-    category: "Full Interior Design",
-    location: "London, UK",
-    image: "/images/portfolio-1.jpg",
-    span: "col-span-1 md:col-span-2",
-  },
-  {
-    title: "Studio Loft — Marais",
-    category: "Room Refresh",
-    location: "Paris, France",
-    image: "/images/portfolio-2.jpg",
-    span: "col-span-1",
-  },
-  {
-    title: "Coastal Retreat",
-    category: "Bespoke Furniture",
-    location: "Amalfi, Italy",
-    image: "/images/portfolio-3.jpg",
-    span: "col-span-1",
-  },
-  {
-    title: "The Pines — Master Suite",
-    category: "E-Design",
-    location: "New York, USA",
-    image: "/images/portfolio-4.jpg",
-    span: "col-span-1",
-  },
-  {
-    title: "Kensington Townhouse",
-    category: "Full Interior Design",
-    location: "London, UK",
-    image: "/images/portfolio-5.jpg",
-    span: "col-span-1 md:col-span-2",
-  },
+  // Kitchens
+  { title: "Modern Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 1.jpg" },
+  { title: "Classic Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 2.jpg" },
+  { title: "Contemporary Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 3.jpg" },
+  { title: "Luxury Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 4.jpg" },
+  { title: "Open Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 5.jpg" },
+  { title: "Designer Kitchen", category: "Kitchens", image: "/images/kitchens/kitcehn 6.jpg" },
+  { title: "Elegant Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 7.jpg" },
+  { title: "Minimalist Kitchen", category: "Kitchens", image: "/images/kitchens/kitcehn 8.jpg" },
+  { title: "Bespoke Kitchen", category: "Kitchens", image: "/images/kitchens/kitcehn 9.jpg" },
+  { title: "Premium Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 10.jpg" },
+  { title: "Studio Kitchen", category: "Kitchens", image: "/images/kitchens/kitchen 14.jpg" },
+  // Bathrooms
+  { title: "Spa Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathroom 1.jpg" },
+  { title: "Modern Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathroom 2.jpg" },
+  { title: "Luxury Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathroom 3.jpg" },
+  { title: "Classic Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathroom 4.jpg" },
+  { title: "Designer Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathrooms 6.jpg" },
+  { title: "Elegant Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathroom 10.jpg" },
+  { title: "Suite Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathrooms 11.jpg" },
+  { title: "Minimalist Bathroom", category: "Bathrooms", image: "/images/bathrooms/bathrooms 12.jpg" },
+  // Floors
+  { title: "Hardwood Floor", category: "Floors", image: "/images/floors/floors 1.jpg" },
+  { title: "Marble Floor", category: "Floors", image: "/images/floors/floor 3.jpg" },
+  { title: "Tile Floor", category: "Floors", image: "/images/floors/floors 4.jpg" },
+  { title: "Designer Floor", category: "Floors", image: "/images/floors/floors 5.jpg" },
+  { title: "Luxury Floor", category: "Floors", image: "/images/floors/floors 6.jpeg" },
+  { title: "Pattern Floor", category: "Floors", image: "/images/floors/floors 7.jpeg" },
+  { title: "Natural Floor", category: "Floors", image: "/images/floors/floors 8.jpeg" },
+  { title: "Premium Floor", category: "Floors", image: "/images/floors/floors 9.jpeg" },
 ];
 
 export default function Portfolio() {
+  const [active, setActive] = useState("All");
+
+  const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
+
   return (
     <section id="portfolio" className="py-28 px-6 lg:px-12 bg-[#F0EDE6]">
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-20">
+        {/* Header */}
+        <div className="text-center mb-14">
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
             Our Work
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C]">
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1C1C1C] mb-10">
             Selected Projects
           </h2>
+
+          {/* Filter tabs */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActive(cat)}
+                className={`text-xs tracking-widest uppercase px-6 py-2.5 border font-sans transition-all duration-300 ${
+                  active === cat
+                    ? "bg-[#C9A96E] border-[#C9A96E] text-white"
+                    : "border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Portfolio grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {projects.map((project) => (
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filtered.map((project) => (
             <div
-              key={project.title}
-              className={`${project.span} group relative overflow-hidden bg-[#D6D0C5] aspect-[4/3] cursor-pointer`}
+              key={project.image}
+              className="group relative overflow-hidden bg-[#D6D0C5] aspect-[4/3]"
             >
-              {/* Image placeholder — replace with next/image when real photos are available */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url('${project.image}')` }}
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Label */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase font-sans mb-1">
-                  {project.category} · {project.location}
+                  {project.category}
                 </p>
-                <h3 className="font-serif text-xl text-white">{project.title}</h3>
+                <h3 className="font-serif text-lg text-white">{project.title}</h3>
               </div>
             </div>
           ))}

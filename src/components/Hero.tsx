@@ -1,9 +1,16 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n";
+import { Language } from "@/lib/translations";
+
+const flags: { code: Language; flag: string; label: string }[] = [
+  { code: "en", flag: "🇺🇸", label: "English" },
+  { code: "es", flag: "🇪🇸", label: "Español" },
+  { code: "pt", flag: "🇧🇷", label: "Português" },
+];
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
   const h = t.hero;
 
   return (
@@ -44,6 +51,25 @@ export default function Hero() {
             {h.cta2}
           </a>
         </div>
+      </div>
+
+      {/* Language flags */}
+      <div className="relative z-10 mt-8 flex items-center gap-4">
+        {flags.map((lang) => (
+          <button
+            key={lang.code}
+            onClick={() => setLanguage(lang.code)}
+            title={lang.label}
+            className={`flex flex-col items-center gap-1 transition-all duration-300 ${
+              language === lang.code ? "opacity-100 scale-110" : "opacity-40 hover:opacity-80"
+            }`}
+          >
+            <span className="text-2xl">{lang.flag}</span>
+            <span className={`text-[9px] tracking-widest uppercase font-sans ${
+              language === lang.code ? "text-[#C9A96E]" : "text-white/50"
+            }`}>{lang.label}</span>
+          </button>
+        ))}
       </div>
 
       {/* Payment badges */}

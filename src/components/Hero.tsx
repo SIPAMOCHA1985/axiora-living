@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#1C1C1C]">
       {/* Background image placeholder — replace src with your actual hero image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-40"

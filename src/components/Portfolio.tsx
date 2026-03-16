@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const categories = ["All", "Kitchens", "Bathrooms", "Floors"];
@@ -40,8 +40,15 @@ const projects = [
 
 export default function Portfolio() {
   const [active, setActive] = useState("All");
+  const [lightbox, setLightbox] = useState<{ image: string; title: string } | null>(null);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <section id="portfolio" className="py-28 px-6 lg:px-12 bg-[#F0EDE6]">
@@ -78,7 +85,8 @@ export default function Portfolio() {
           {filtered.map((project) => (
             <div
               key={project.image}
-              className="group relative overflow-hidden bg-[#D6D0C5] aspect-[4/3]"
+              onClick={() => setLightbox({ image: project.image, title: project.title })}
+              className="group relative overflow-hidden bg-[#D6D0C5] aspect-[4/3] cursor-zoom-in"
             >
               <Image
                 src={project.image}
@@ -97,6 +105,36 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
+
+        {/* Lightbox */}
+        {lightbox && (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white text-3xl font-light leading-none"
+            >
+              ×
+            </button>
+            <div
+              className="relative max-w-5xl max-h-[85vh] w-full h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={lightbox.image}
+                alt={lightbox.title}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 font-serif text-lg">
+              {lightbox.title}
+            </p>
+          </div>
+        )}
 
         <div className="text-center mt-14">
           <a

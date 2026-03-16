@@ -33,7 +33,7 @@ export default function About() {
             How You Live
           </h2>
           <p className="text-[#6B6B6B] font-sans font-light leading-relaxed mb-6">
-            Axiora Living was founded on a simple belief: a beautifully designed
+            Ixora Living was founded on a simple belief: a beautifully designed
             space has the power to improve the quality of everyday life. We
             combine classical principles of proportion and materiality with a
             deeply personal understanding of each client&apos;s world.

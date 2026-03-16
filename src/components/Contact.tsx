@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Contact() {
+  const { t } = useLanguage();
+  const c = t.contact;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,31 +33,35 @@ export default function Contact() {
         {/* Left */}
         <div>
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-6">
-            Let&apos;s Work Together
+            {c.sectionLabel}
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-8 leading-tight">
-            Begin Your
+            {c.h2Line1}
             <br />
-            Design Journey
+            {c.h2Line2}
           </h2>
           <p className="text-white/60 font-sans font-light leading-relaxed mb-12">
-            Whether you have a clear vision or you&apos;re just beginning to imagine
-            your dream space, we&apos;d love to hear from you. Book a complimentary
-            30-minute consultation to get started.
+            {c.body}
           </p>
 
           <div className="space-y-6 text-white/60 font-sans font-light text-sm">
             <div>
-              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Email</p>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">
+                {c.emailLabel}
+              </p>
               <p>hello@ixoraliving.com</p>
             </div>
             <div>
-              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Studio</p>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">
+                {c.studioLabel}
+              </p>
               <p>12 Mayfair Square, London, W1K 1AA</p>
             </div>
             <div>
-              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Hours</p>
-              <p>Monday – Friday, 9am – 6pm GMT</p>
+              <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">
+                {c.hoursLabel}
+              </p>
+              <p>{c.hoursValue}</p>
             </div>
           </div>
         </div>
@@ -63,37 +71,48 @@ export default function Contact() {
           {submitted ? (
             <div className="h-full flex items-center justify-center text-center py-20">
               <div>
-                <p className="font-serif text-3xl text-white mb-4">Thank You</p>
-                <p className="text-white/60 font-sans font-light">
-                  We&apos;ll be in touch within 24 hours to arrange your consultation.
-                </p>
+                <p className="font-serif text-3xl text-white mb-4">{c.thankYouTitle}</p>
+                <p className="text-white/60 font-sans font-light">{c.thankYouSubtitle}</p>
               </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              {[
-                { name: "name", label: "Your Name", type: "text", placeholder: "Alexandra Smith" },
-                { name: "email", label: "Email Address", type: "email", placeholder: "alex@example.com" },
-              ].map((field) => (
-                <div key={field.name}>
-                  <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
-                    {field.label}
-                  </label>
-                  <input
-                    type={field.type}
-                    name={field.name}
-                    placeholder={field.placeholder}
-                    value={formData[field.name as keyof typeof formData]}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors"
-                  />
-                </div>
-              ))}
-
+              {/* Name */}
               <div>
                 <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
-                  Service
+                  {c.nameLabel}
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Alexandra Smith"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
+                  {c.emailFieldLabel}
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="alex@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors"
+                />
+              </div>
+
+              {/* Service */}
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
+                  {c.serviceLabel}
                 </label>
                 <select
                   name="service"
@@ -102,22 +121,26 @@ export default function Contact() {
                   required
                   className="w-full bg-transparent border-b border-white/20 py-3 text-white font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors appearance-none cursor-pointer"
                 >
-                  <option value="" disabled className="bg-[#1C1C1C]">Select a service</option>
-                  <option value="full-design" className="bg-[#1C1C1C]">Full Interior Design</option>
-                  <option value="room-refresh" className="bg-[#1C1C1C]">Room Refresh</option>
-                  <option value="e-design" className="bg-[#1C1C1C]">E-Design Consultation</option>
-                  <option value="bespoke" className="bg-[#1C1C1C]">Bespoke Furniture & Decor</option>
+                  <option value="" disabled className="bg-[#1C1C1C]">
+                    {c.selectPlaceholder}
+                  </option>
+                  {c.serviceOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value} className="bg-[#1C1C1C]">
+                      {opt.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 
+              {/* Message */}
               <div>
                 <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
-                  Tell Us About Your Project
+                  {c.messageLabel}
                 </label>
                 <textarea
                   name="message"
                   rows={4}
-                  placeholder="Describe your space, style preferences, timeline..."
+                  placeholder={c.messagePlaceholder}
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -129,7 +152,7 @@ export default function Contact() {
                 type="submit"
                 className="mt-4 w-full py-4 bg-[#C9A96E] text-white text-sm tracking-widest uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300"
               >
-                Send Message
+                {c.submitButton}
               </button>
             </form>
           )}

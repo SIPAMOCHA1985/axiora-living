@@ -1,25 +1,6 @@
-const paymentMethods = [
-  {
-    category: "Credit & Debit Cards",
-    icon: "💳",
-    items: ["Visa", "Mastercard", "American Express", "Discover"],
-  },
-  {
-    category: "Digital Payments",
-    icon: "⚡",
-    items: ["Stripe", "Square", "Apple Pay", "Google Pay"],
-  },
-  {
-    category: "Financing Available",
-    icon: "🏦",
-    items: ["0% Interest Plans", "Monthly Installments", "Flexible Terms", "Quick Approval"],
-  },
-  {
-    category: "Traditional",
-    icon: "🖊️",
-    items: ["Personal Check", "Bank Transfer", "Wire Transfer", "Zelle"],
-  },
-];
+"use client";
+
+import { useLanguage } from "@/lib/i18n";
 
 const cryptos = [
   { name: "Bitcoin", symbol: "BTC", color: "#F7931A" },
@@ -31,26 +12,28 @@ const cryptos = [
 ];
 
 export default function Payments() {
+  const { t } = useLanguage();
+  const p = t.payments;
+
   return (
     <section id="payments" className="py-28 px-6 lg:px-12 bg-[#1C1C1C]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
-            Flexible Options
+            {p.sectionLabel}
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">
-            We Accept All Payments
+            {p.h2}
           </h2>
           <p className="text-white/50 font-sans font-light max-w-xl mx-auto">
-            We make it easy to invest in your dream space. Choose the payment
-            method that works best for you — including cryptocurrency.
+            {p.subtitle}
           </p>
         </div>
 
         {/* Payment methods grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 mb-px">
-          {paymentMethods.map((method) => (
+          {p.paymentMethods.map((method) => (
             <div key={method.category} className="bg-[#1C1C1C] p-8 hover:bg-[#252525] transition-colors duration-300">
               <span className="text-3xl mb-4 block">{method.icon}</span>
               <h3 className="font-serif text-lg text-white mb-4">{method.category}</h3>
@@ -71,16 +54,15 @@ export default function Payments() {
           <div className="flex flex-col lg:flex-row lg:items-center gap-10">
             <div className="lg:w-1/3">
               <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
-                Crypto Accepted
+                {p.cryptoLabel}
               </p>
               <h3 className="font-serif text-3xl text-white mb-4">
-                We Speak
+                {p.cryptoH3Line1}
                 <br />
-                <span className="text-[#C9A96E]">Blockchain</span>
+                <span className="text-[#C9A96E]">{p.cryptoH3Line2}</span>
               </h3>
               <p className="text-white/50 font-sans font-light text-sm leading-relaxed">
-                Pay for your interior design project with cryptocurrency.
-                Fast, secure, and borderless — perfect for our international clients.
+                {p.cryptoDesc}
               </p>
             </div>
 
@@ -109,20 +91,19 @@ export default function Payments() {
         {/* Financing CTA */}
         <div className="mt-px bg-[#C9A96E]/10 border border-[#C9A96E]/30 p-8 lg:p-12 text-center">
           <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-sans mb-4">
-            Special Offer
+            {p.financingLabel}
           </p>
           <h3 className="font-serif text-2xl md:text-3xl text-white mb-4">
-            0% Interest Financing Available
+            {p.financingH3}
           </h3>
           <p className="text-white/50 font-sans font-light mb-8 max-w-lg mx-auto">
-            Start your project today with flexible monthly payments. Subject to approval.
-            Ask us about our financing options during your consultation.
+            {p.financingDesc}
           </p>
           <a
             href="#contact"
             className="inline-block text-sm tracking-widest uppercase px-10 py-4 bg-[#C9A96E] text-white hover:bg-[#A8864A] transition-colors duration-300 font-sans"
           >
-            Ask About Financing
+            {p.financingCta}
           </a>
         </div>
       </div>

@@ -1,10 +1,14 @@
-const footerLinks = {
-  Company: ["About", "Services", "Portfolio", "Contact"],
-  Services: ["Full Interior Design", "Room Refresh", "E-Design", "Bespoke"],
-  Follow: ["Instagram", "Pinterest", "LinkedIn", "Houzz"],
-};
+"use client";
+
+import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  const f = t.footer;
+
+  // Maintain stable group order
+  const groupKeys = ["Company", "Services", "Follow"] as const;
+
   return (
     <footer className="bg-[#141414] px-6 lg:px-12 pt-20 pb-10">
       <div className="max-w-7xl mx-auto">
@@ -18,37 +22,40 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 font-sans font-light text-sm leading-relaxed">
-              Crafting timeless interiors for the way you live.
+              {f.tagline}
             </p>
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([group, links]) => (
-            <div key={group}>
-              <p className="text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-6">
-                {group}
-              </p>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-white/40 hover:text-white font-sans font-light text-sm transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {groupKeys.map((key) => {
+            const group = f.groups[key];
+            return (
+              <div key={key}>
+                <p className="text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-6">
+                  {group.label}
+                </p>
+                <ul className="space-y-3">
+                  {group.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-white/40 hover:text-white font-sans font-light text-sm transition-colors"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/25 font-sans font-light text-xs">
-          <p>© {new Date().getFullYear()} Ixora Living. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ixora Living. {f.allRightsReserved}</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white/60 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white/60 transition-colors">{f.privacyPolicy}</a>
+            <a href="#" className="hover:text-white/60 transition-colors">{f.termsOfService}</a>
           </div>
         </div>
       </div>

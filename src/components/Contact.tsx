@@ -45,7 +45,7 @@ export default function Contact() {
           <div className="space-y-6 text-white/60 font-sans font-light text-sm">
             <div>
               <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Email</p>
-              <p>hello@axiora-living.com</p>
+              <p>hello@ixoraliving.com</p>
             </div>
             <div>
               <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">Studio</p>

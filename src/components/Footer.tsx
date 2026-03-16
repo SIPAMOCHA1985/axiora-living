@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex flex-col leading-none mb-6">
-              <span className="font-serif text-2xl tracking-widest text-white">AXIORA</span>
+              <span className="font-serif text-2xl tracking-widest text-white">IXORA</span>
               <span className="text-[10px] tracking-[0.35em] text-[#C9A96E] uppercase font-sans font-light">
                 Living
               </span>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/25 font-sans font-light text-xs">
-          <p>© {new Date().getFullYear()} Axiora Living. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ixora Living. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white/60 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white/60 transition-colors">Terms of Service</a>

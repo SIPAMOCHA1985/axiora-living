@@ -15,10 +15,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Axiora Living | Interior Design & Home Decor",
+  title: "Ixora Living | Interior Design & Home Decor",
   description:
-    "Axiora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
-  keywords: ["interior design", "home decor", "luxury living", "bespoke interiors", "Axiora Living"],
+    "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
+  keywords: ["interior design", "home decor", "luxury living", "bespoke interiors", "Ixora Living"],
 };
 
 export default function RootLayout({

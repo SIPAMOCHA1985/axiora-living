@@ -30,7 +30,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex flex-col leading-none group">
           <span className="font-serif text-2xl tracking-widest text-[#1C1C1C] group-hover:text-[#C9A96E] transition-colors">
-            AXIORA
+            IXORA
           </span>
           <span className="text-[10px] tracking-[0.35em] text-[#C9A96E] uppercase font-sans font-light">
             Living

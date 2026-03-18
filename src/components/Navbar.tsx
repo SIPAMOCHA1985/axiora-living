@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n";
 import { Language } from "@/lib/translations";
+import Logo from "@/components/Logo";
 
 const languages: { code: Language; display: string }[] = [
   { code: "en", display: "EN" },
@@ -39,13 +40,12 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none group">
-          <span className="font-serif text-2xl tracking-widest text-[#1C1C1C] group-hover:text-[#C9A96E] transition-colors">
-            IXORA
-          </span>
-          <span className="text-[10px] tracking-[0.35em] text-[#C9A96E] uppercase font-sans font-light">
-            Living
-          </span>
+        <Link href="/" aria-label="Ixora Living — Home">
+          <Logo
+            variant={scrolled ? "light" : "dark"}
+            width={130}
+            className="transition-all duration-300 hover:opacity-80"
+          />
         </Link>
 
         {/* Desktop links + language switcher */}

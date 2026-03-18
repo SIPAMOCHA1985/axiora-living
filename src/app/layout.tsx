@@ -20,6 +20,25 @@ export const metadata: Metadata = {
   description:
     "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
   keywords: ["interior design", "home decor", "luxury living", "bespoke interiors", "Ixora Living"],
+  metadataBase: new URL("https://www.ixoraliving.com"),
+  alternates: {
+    canonical: "https://www.ixoraliving.com",
+  },
+  openGraph: {
+    title: "Ixora Living | Interior Design & Home Decor",
+    description:
+      "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
+    url: "https://www.ixoraliving.com",
+    siteName: "Ixora Living",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ixora Living | Interior Design & Home Decor",
+    description:
+      "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
+  },
 };
 
 export default function RootLayout({

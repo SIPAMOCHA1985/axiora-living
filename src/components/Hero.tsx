@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/lib/i18n";
 import { Language } from "@/lib/translations";
+import Logo from "@/components/Logo";
 
 const flags: { code: Language; flag: string; label: string }[] = [
   { code: "en", flag: "🇺🇸", label: "English" },
@@ -26,9 +27,19 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <p className="text-[#C9A96E] text-xs tracking-[0.5em] uppercase font-sans mb-6">
-          {h.tagline}
-        </p>
+
+        {/* Logo mark — hero centerpiece */}
+        <div className="flex justify-center mb-10">
+          <Logo variant="dark" width={320} className="drop-shadow-[0_0_40px_rgba(201,169,110,0.25)]" />
+        </div>
+
+        {/* Thin gold divider */}
+        <div className="flex items-center justify-center gap-4 mb-10">
+          <div className="h-px w-20 bg-gradient-to-r from-transparent to-[#C9A96E]/60" />
+          <span className="text-[#C9A96E]/60 text-[8px] tracking-[0.6em] uppercase font-sans">{h.tagline}</span>
+          <div className="h-px w-20 bg-gradient-to-l from-transparent to-[#C9A96E]/60" />
+        </div>
+
         <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-8">
           {h.h1Line1}
           <br />

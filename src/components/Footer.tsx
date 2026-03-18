@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -15,11 +16,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-16 pb-16 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex flex-col leading-none mb-6">
-              <span className="font-serif text-2xl tracking-widest text-white">IXORA</span>
-              <span className="text-[10px] tracking-[0.35em] text-[#C9A96E] uppercase font-sans font-light">
-                Living
-              </span>
+            <div className="mb-6">
+              <Logo variant="dark" width={150} />
             </div>
             <p className="text-white/40 font-sans font-light text-sm leading-relaxed">
               {f.tagline}

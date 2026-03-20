@@ -58,10 +58,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <SchemaOrg />
-      </head>
       <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+        <SchemaOrg />
         <ClientProviders>
           {children}
         </ClientProviders>

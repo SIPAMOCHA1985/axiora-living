@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import ClientProviders from "@/components/ClientProviders";
+import SchemaOrg from "@/components/SchemaOrg";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -16,28 +17,37 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ixora Living | Interior Design & Home Decor",
+  title: "Ixora Living | Kitchen & Bathroom Remodeling Orlando, FL",
   description:
-    "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
-  keywords: ["interior design", "home decor", "luxury living", "bespoke interiors", "Ixora Living"],
+    "Luxury kitchen, bathroom & floor remodeling in Orlando, FL. Licensed & insured. Free estimate. Call (689) 278-5555",
+  keywords: [
+    "kitchen remodeling orlando",
+    "bathroom remodeling orlando fl",
+    "luxury remodel orange county florida",
+    "floor installation orlando",
+    "kitchen renovation orlando",
+    "bathroom renovation orlando",
+    "Ixora Living",
+  ],
   metadataBase: new URL("https://www.ixoraliving.com"),
   alternates: {
     canonical: "https://www.ixoraliving.com",
   },
   openGraph: {
-    title: "Ixora Living | Interior Design & Home Decor",
+    title: "Ixora Living | Remodeling Orlando FL",
     description:
-      "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
+      "Luxury kitchen & bath remodeling specialists in Orange County, Florida.",
     url: "https://www.ixoraliving.com",
     siteName: "Ixora Living",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ixora Living | Interior Design & Home Decor",
+    title: "Ixora Living | Kitchen & Bathroom Remodeling Orlando, FL",
     description:
-      "Ixora Living crafts timeless interiors that reflect your personality. Explore our design services, portfolio, and bespoke home decor collections.",
+      "Luxury kitchen, bathroom & floor remodeling in Orlando, FL. Licensed & insured. Free estimate.",
   },
 };
 
@@ -48,6 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <SchemaOrg />
+      </head>
       <body className={`${playfair.variable} ${inter.variable} antialiased`}>
         <ClientProviders>
           {children}

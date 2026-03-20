@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.ixoraliving.com
+
+# Sitemaps
+Sitemap: https://www.ixoraliving.com/sitemap.xml

@@ -2,7 +2,6 @@
 
 import { useLanguage } from "@/lib/i18n";
 import { Language } from "@/lib/translations";
-import Logo from "@/components/Logo";
 
 const flags: { code: Language; flag: string; label: string }[] = [
   { code: "en", flag: "🇺🇸", label: "English" },
@@ -30,7 +29,13 @@ export default function Hero() {
 
         {/* Logo mark — hero centerpiece */}
         <div className="flex justify-center mb-10">
-          <Logo variant="dark" width={320} className="drop-shadow-[0_0_40px_rgba(201,169,110,0.25)]" />
+          <img
+            src="/logo-social.svg"
+            alt="Ixora Living"
+            width={320}
+            height={320}
+            className="drop-shadow-[0_0_50px_rgba(201,169,110,0.30)]"
+          />
         </div>
 
         {/* Thin gold divider */}
@@ -50,13 +55,13 @@ export default function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#portfolio"
+            href="#contact"
             className="px-10 py-4 bg-[#C9A96E] text-white text-sm tracking-widest uppercase font-sans hover:bg-[#A8864A] transition-colors duration-300"
           >
             {h.cta1}
           </a>
           <a
-            href="#contact"
+            href="tel:+16892785555"
             className="px-10 py-4 border border-white text-white text-sm tracking-widest uppercase font-sans hover:bg-white hover:text-[#1C1C1C] transition-colors duration-300"
           >
             {h.cta2}

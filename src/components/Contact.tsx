@@ -10,7 +10,10 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    zip: "",
     service: "",
+    budget: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -21,10 +24,18 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: wire up to your form backend (e.g. Resend, Formspree, or a Next.js API route)
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) setSubmitted(true);
+    } catch {
+      // fail silently — user sees no change, can retry
+    }
   };
 
   return (
@@ -55,7 +66,7 @@ export default function Contact() {
               <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">
                 {c.studioLabel}
               </p>
-              <p>12 Mayfair Square, London, W1K 1AA</p>
+              <p>Orange County, FL 32836</p>
             </div>
             <div>
               <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">
@@ -109,6 +120,40 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Phone + Zip */}
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
+                    {c.phoneLabel}
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="(407) 000-0000"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
+                    {c.zipLabel}
+                  </label>
+                  <input
+                    type="text"
+                    name="zip"
+                    placeholder="32836"
+                    value={formData.zip}
+                    onChange={handleChange}
+                    required
+                    maxLength={5}
+                    pattern="[0-9]{5}"
+                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder-white/30 font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors"
+                  />
+                </div>
+              </div>
+
               {/* Service */}
               <div>
                 <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
@@ -125,6 +170,27 @@ export default function Contact() {
                     {c.selectPlaceholder}
                   </option>
                   {c.serviceOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value} className="bg-[#1C1C1C]">
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Budget */}
+              <div>
+                <label className="block text-[10px] tracking-[0.4em] uppercase text-[#C9A96E] font-sans mb-2">
+                  {c.budgetLabel}
+                </label>
+                <select
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-white/20 py-3 text-white font-sans font-light text-sm focus:outline-none focus:border-[#C9A96E] transition-colors appearance-none cursor-pointer"
+                >
+                  <option value="" disabled className="bg-[#1C1C1C]">—</option>
+                  {c.budgetOptions.map((opt) => (
                     <option key={opt.value} value={opt.value} className="bg-[#1C1C1C]">
                       {opt.label}
                     </option>

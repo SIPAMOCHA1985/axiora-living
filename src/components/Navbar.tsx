@@ -85,13 +85,21 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="hidden md:inline-block text-sm tracking-widest uppercase px-6 py-2.5 border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-white transition-all duration-300 font-sans"
-        >
-          {t.navbar.bookConsult}
-        </a>
+        {/* Phone + CTA */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="tel:+16892785555"
+            className="text-sm font-sans text-[#1C1C1C] hover:text-[#C9A96E] transition-colors tracking-wide"
+          >
+            (689) 278-5555
+          </a>
+          <a
+            href="#contact"
+            className="text-sm tracking-widest uppercase px-6 py-2.5 border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-white transition-all duration-300 font-sans"
+          >
+            {t.navbar.bookConsult}
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -124,6 +132,13 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="tel:+16892785555"
+            onClick={() => setMenuOpen(false)}
+            className="text-sm tracking-widest uppercase px-6 py-3 bg-[#C9A96E] text-white text-center font-sans font-medium"
+          >
+            Call (689) 278-5555
+          </a>
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}

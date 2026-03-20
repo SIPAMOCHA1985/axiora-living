@@ -1,0 +1,69 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ixora Living">
+
+  <defs>
+    <radialGradient id="flowerGlow" cx="50%" cy="39%" r="32%">
+      <stop offset="0%"   stop-color="#C9A96E" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#1C1C1C"/>
+
+  <!-- Subtle gold glow behind flower -->
+  <ellipse cx="500" cy="390" rx="300" ry="300" fill="url(#flowerGlow)"/>
+
+  <!-- ── ORNAMENTAL ROW (y = 390) ── -->
+
+  <!-- Left diamond -->
+  <path d="M185,376 L199,390 L185,404 L171,390 Z" fill="#C9A96E"/>
+
+  <!-- Left line -->
+  <line x1="215" y1="390" x2="413" y2="390" stroke="rgba(201,169,110,0.40)" stroke-width="0.9"/>
+
+  <!-- ── IXORA FLOWER MARK — center (500, 390) ── -->
+  <!-- Petal up -->
+  <path d="M500,390 C489,354 489,327 500,318 C511,327 511,354 500,390" fill="#C9A96E"/>
+  <!-- Petal right -->
+  <path d="M500,390 C536,379 563,379 572,390 C563,401 536,401 500,390" fill="#C9A96E"/>
+  <!-- Petal down -->
+  <path d="M500,390 C489,426 489,453 500,462 C511,453 511,426 500,390" fill="#C9A96E"/>
+  <!-- Petal left -->
+  <path d="M500,390 C464,379 437,379 428,390 C437,401 464,401 500,390" fill="#C9A96E"/>
+  <!-- Center dot -->
+  <circle cx="500" cy="390" r="12" fill="#C9A96E"/>
+
+  <!-- Right line -->
+  <line x1="587" y1="390" x2="785" y2="390" stroke="rgba(201,169,110,0.40)" stroke-width="0.9"/>
+
+  <!-- Right diamond -->
+  <path d="M815,376 L829,390 L815,404 L801,390 Z" fill="#C9A96E"/>
+
+  <!-- ── WORDMARK ── -->
+  <text
+    x="497"
+    y="560"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="90"
+    font-weight="500"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="26"
+  >IXORA</text>
+
+  <!-- Divider line -->
+  <line x1="348" y1="585" x2="652" y2="585" stroke="rgba(201,169,110,0.40)" stroke-width="0.8"/>
+
+  <!-- LIVING subtext -->
+  <text
+    x="500"
+    y="624"
+    font-family="'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="21"
+    font-weight="300"
+    fill="#C9A96E"
+    text-anchor="middle"
+    letter-spacing="17"
+  >LIVING</text>
+
+</svg>

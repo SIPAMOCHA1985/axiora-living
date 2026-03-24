@@ -30,7 +30,7 @@ export default function Hero() {
         {/* Logo mark — hero centerpiece */}
         <div className="flex justify-center mb-10">
           <img
-            src="/logo-social.svg"
+            src="/logo-social.jpg"
             alt="Ixora Living"
             width={320}
             height={320}

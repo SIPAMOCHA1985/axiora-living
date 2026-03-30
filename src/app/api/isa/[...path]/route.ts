@@ -16,7 +16,7 @@ export async function POST(
     body = undefined
   }
 
-  const res = await fetch(`${ISA_API}/api/${endpoint}`, {
+  const res = await fetch(`${ISA_API}/${endpoint}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: body || undefined,

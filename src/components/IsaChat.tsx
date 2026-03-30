@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 
-const ISA_API = 'http://46.224.217.221:8080'
+const ISA_API = '/api/isa'
 
 interface Message {
   role: 'user' | 'assistant'

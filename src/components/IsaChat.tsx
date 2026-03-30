@@ -32,7 +32,7 @@ export default function IsaChat() {
       setSessionId(data.session_id)
       setMessages([{ role: 'assistant', content: data.message }])
     } catch {
-      setMessages([{ role: 'assistant', content: "Hi! I'm ISA. Please call us at (407) 000-0000 to get started!" }])
+      setMessages([{ role: 'assistant', content: "Hi! I'm ISA. Please call us at (689) 278-5555 to get started!" }])
     } finally {
       setLoading(false)
     }
@@ -61,7 +61,7 @@ export default function IsaChat() {
     } catch {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: "I'm having a small issue. Please call us at (407) 000-0000!"
+        content: "I'm having a small issue. Please call us at (689) 278-5555!"
       }])
     } finally {
       setLoading(false)

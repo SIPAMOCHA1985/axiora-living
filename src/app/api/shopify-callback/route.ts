@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const CLIENT_ID = process.env.SHOPIFY_CLIENT_ID!;
-const CLIENT_SECRET = process.env.SHOPIFY_CLIENT_SECRET!;
+const CLIENT_ID = process.env.SHOPIFY_CLIENT_ID ?? '';
+const CLIENT_SECRET = process.env.SHOPIFY_CLIENT_SECRET ?? '';
 const SHOP = '7085rr-0m.myshopify.com';
 
 export async function GET(req: NextRequest) {
@@ -9,6 +9,14 @@ export async function GET(req: NextRequest) {
 
   if (!code) {
     return NextResponse.json({ error: 'No code provided' }, { status: 400 });
+  }
+
+  // If no secrets configured, just show the code so it can be exchanged manually
+  if (!CLIENT_SECRET) {
+    return new NextResponse(
+      `<html><body><h2>CODE (copy this):</h2><p style="word-break:break-all;font-size:20px">${code}</p></body></html>`,
+      { headers: { 'Content-Type': 'text/html' } }
+    );
   }
 
   try {

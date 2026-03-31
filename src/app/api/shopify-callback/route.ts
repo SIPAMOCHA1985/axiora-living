@@ -30,16 +30,21 @@ export async function GET(req: NextRequest) {
       body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET, code }),
     });
 
-    const data = await response.json();
+    const rawText = await response.text();
+    let data: Record<string, unknown> = {};
+    try { data = JSON.parse(rawText); } catch (_) {}
 
     if (data.access_token) {
       return new NextResponse(
-        `<html><body><h1>✅ Token capturado!</h1><p><strong>${data.access_token}</strong></p></body></html>`,
+        `<html><body><h1>TOKEN OK</h1><p><strong>${data.access_token}</strong></p></body></html>`,
         { headers: { 'Content-Type': 'text/html' } }
       );
     }
 
-    return NextResponse.json({ error: 'No token', data }, { status: 500 });
+    return new NextResponse(
+      `<html><body><h2>Exchange failed (${response.status})</h2><pre>${rawText.slice(0, 2000)}</pre><hr/><p>client_id: ${CLIENT_ID}</p></body></html>`,
+      { headers: { 'Content-Type': 'text/html' } }
+    );
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }

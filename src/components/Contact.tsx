@@ -77,7 +77,7 @@ export default function Contact() {
           </div>
 
           <a
-            href="https://wa.me/16892785555?text=Hello%2C%20I%27m%20interested%20in%20your%20interior%20design%20services."
+            href="https://wa.me/14075358810?text=Hello%2C%20I%27m%20interested%20in%20your%20interior%20design%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 mt-10 px-6 py-3 border border-[#C9A96E] text-[#C9A96E] text-xs tracking-[0.3em] uppercase font-sans hover:bg-[#C9A96E] hover:text-white transition-colors duration-300"

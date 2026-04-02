@@ -88,10 +88,10 @@ export default function Navbar() {
         {/* Phone + CTA */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:+16892785555"
+            href="tel:+14075358810"
             className="text-sm font-sans text-[#1C1C1C] hover:text-[#C9A96E] transition-colors tracking-wide"
           >
-            (689) 278-5555
+            (407) 535-8810
           </a>
           <a
             href="#contact"
@@ -133,11 +133,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+16892785555"
+            href="tel:+14075358810"
             onClick={() => setMenuOpen(false)}
             className="text-sm tracking-widest uppercase px-6 py-3 bg-[#C9A96E] text-white text-center font-sans font-medium"
           >
-            Call (689) 278-5555
+            Call (407) 535-8810
           </a>
           <a
             href="#contact"

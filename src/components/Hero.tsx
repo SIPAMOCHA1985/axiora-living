@@ -61,7 +61,7 @@ export default function Hero() {
             {h.cta1}
           </a>
           <a
-            href="tel:+16892785555"
+            href="tel:+14075358810"
             className="px-10 py-4 border border-white text-white text-sm tracking-widest uppercase font-sans hover:bg-white hover:text-[#1C1C1C] transition-colors duration-300"
           >
             {h.cta2}

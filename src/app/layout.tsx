@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ixora Living | Kitchen & Bathroom Remodeling Orlando, FL",
   description:
-    "Luxury kitchen, bathroom & floor remodeling in Orlando, FL. Licensed & insured. Free estimate. Call (689) 278-5555",
+    "Luxury kitchen, bathroom & floor remodeling in Orlando, FL. Licensed & insured. Free estimate. Call (407) 538-8810",
   keywords: [
     "kitchen remodeling orlando",
     "bathroom remodeling orlando fl",

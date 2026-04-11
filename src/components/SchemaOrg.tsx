@@ -3,7 +3,7 @@ const schema = {
   "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
   name: "Ixora Living",
   url: "https://www.ixoraliving.com",
-  telephone: "+1-407-535-8810",
+  telephone: "+1-407-538-8810",
   email: "hello@ixoraliving.com",
   address: {
     "@type": "PostalAddress",

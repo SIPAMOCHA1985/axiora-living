@@ -60,7 +60,7 @@ export default function Contact() {
               <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">
                 {c.emailLabel}
               </p>
-              <p>hello@ixoraliving.com</p>
+              <p>Info@ixora-living.com</p>
             </div>
             <div>
               <p className="text-[#C9A96E] text-[10px] tracking-[0.4em] uppercase mb-1">

@@ -29,15 +29,15 @@ export const metadata: Metadata = {
     "bathroom renovation orlando",
     "Ixora Living",
   ],
-  metadataBase: new URL("https://www.ixoraliving.com"),
+  metadataBase: new URL("https://www.ixora-living.com"),
   alternates: {
-    canonical: "https://www.ixoraliving.com",
+    canonical: "https://www.ixora-living.com",
   },
   openGraph: {
     title: "Ixora Living | Remodeling Orlando FL",
     description:
       "Luxury kitchen & bath remodeling specialists in Orange County, Florida.",
-    url: "https://www.ixoraliving.com",
+    url: "https://www.ixora-living.com",
     siteName: "Ixora Living",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
     locale: "en_US",

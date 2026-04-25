@@ -2,9 +2,9 @@ const schema = {
   "@context": "https://schema.org",
   "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
   name: "Ixora Living",
-  url: "https://www.ixoraliving.com",
+  url: "https://www.ixora-living.com",
   telephone: "+1-407-538-8810",
-  email: "hello@ixoraliving.com",
+  email: "Info@ixora-living.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Orlando",

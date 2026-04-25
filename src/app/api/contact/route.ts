@@ -11,8 +11,8 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: "Ixora Living <hello@ixoraliving.com>",
-      to: "hello@ixoraliving.com",
+      from: "Ixora Living <Info@ixora-living.com>",
+      to: "Info@ixora-living.com",
       replyTo: email,
       subject: `New estimate request — ${service}`,
       html: `

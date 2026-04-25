@@ -228,8 +228,8 @@ export default function InvoicePage() {
                 Interior Design & Remodeling
               </p>
               <p style={{ color: muted, fontSize: "13px", margin: 0, lineHeight: 1.8, fontWeight: 300 }}>
-                hello@ixoraliving.com<br />
-                (689) 278-5555<br />
+                Info@ixora-living.com<br />
+                (407) 538-8810<br />
                 Orange County, FL 32836
               </p>
             </div>
@@ -594,7 +594,7 @@ export default function InvoicePage() {
               </p>
             </div>
             <p style={{ color: muted, fontSize: "11px", letterSpacing: "0.3em", textTransform: "uppercase", margin: 0 }}>
-              IXORALIVING.COM
+              IXORA-LIVING.COM
             </p>
             <div
               style={{

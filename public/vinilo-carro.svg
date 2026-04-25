@@ -1,0 +1,65 @@
+<svg width="70in" height="16in" viewBox="0 0 7000 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <radialGradient id="flowerGlow" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(900,800) scale(700,700) translate(-0.5,-0.5)">
+      <stop offset="0%"   stop-color="#C9A96E" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="7000" height="1600" fill="#1C1C1C"/>
+
+  <!-- Glow behind flower -->
+  <ellipse cx="900" cy="800" rx="750" ry="750" fill="url(#flowerGlow)"/>
+
+  <!-- ── FLOWER MARK (scale 2x, centered at 900,800) ── -->
+
+  <!-- Left diamond -->
+  <path d="M270,772 L298,800 L270,828 L242,800 Z" fill="#C9A96E"/>
+
+  <!-- Left ornamental line -->
+  <line x1="330" y1="800" x2="726" y2="800" stroke="rgba(201,169,110,0.40)" stroke-width="1.8"/>
+
+  <!-- Petal up -->
+  <path d="M900,800 C878,728 878,674 900,656 C922,674 922,728 900,800" fill="#C9A96E"/>
+  <!-- Petal right -->
+  <path d="M900,800 C972,778 1026,778 1044,800 C1026,822 972,822 900,800" fill="#C9A96E"/>
+  <!-- Petal down -->
+  <path d="M900,800 C878,872 878,926 900,944 C922,926 922,872 900,800" fill="#C9A96E"/>
+  <!-- Petal left -->
+  <path d="M900,800 C828,778 774,778 756,800 C774,822 828,822 900,800" fill="#C9A96E"/>
+  <!-- Center dot -->
+  <circle cx="900" cy="800" r="24" fill="#C9A96E"/>
+
+  <!-- Right ornamental line -->
+  <line x1="1074" y1="800" x2="1470" y2="800" stroke="rgba(201,169,110,0.40)" stroke-width="1.8"/>
+
+  <!-- Right diamond -->
+  <path d="M1430,772 L1458,800 L1430,828 L1402,800 Z" fill="#C9A96E"/>
+
+  <!-- Vertical divider -->
+  <line x1="1660" y1="240" x2="1660" y2="1360" stroke="rgba(201,169,110,0.25)" stroke-width="1.5"/>
+
+  <!-- ── TEXT ZONE ── -->
+
+  <!-- Top gold accent line -->
+  <line x1="1800" y1="520" x2="6900" y2="520" stroke="rgba(201,169,110,0.30)" stroke-width="1.2"/>
+
+  <!-- Main brand/URL text -->
+  <text
+    x="4350"
+    y="960"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="520"
+    font-weight="500"
+    fill="#FFFFFF"
+    text-anchor="middle"
+    letter-spacing="18"
+  >IXORALIVING.COM</text>
+
+  <!-- Bottom gold accent line -->
+  <line x1="1800" y1="1080" x2="6900" y2="1080" stroke="rgba(201,169,110,0.30)" stroke-width="1.2"/>
+
+</svg>

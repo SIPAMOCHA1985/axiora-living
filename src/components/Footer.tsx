@@ -50,7 +50,12 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/25 font-sans font-light text-xs">
-          <p>© {new Date().getFullYear()} Ixora Living. {f.allRightsReserved}</p>
+          <div>
+            <p>© {new Date().getFullYear()} Ixora Living. {f.allRightsReserved}</p>
+            <p className="text-white/15 mt-1">
+              A <a href="https://www.jcsolutionsenterprise.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors">JC Solutions Enterprise LLC</a> Company · Orlando, Florida
+            </p>
+          </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white/60 transition-colors">{f.privacyPolicy}</a>
             <a href="#" className="hover:text-white/60 transition-colors">{f.termsOfService}</a>

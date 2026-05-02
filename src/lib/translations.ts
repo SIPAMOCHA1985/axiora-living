@@ -150,10 +150,10 @@ export const translations = {
       para2:
         "Our team of designers, artisans, and project managers collaborate across disciplines to bring interiors that are both functional and deeply considered — spaces where living feels effortless.",
       stats: [
-        { value: "12+", label: "Years of Experience" },
-        { value: "200+", label: "Projects Completed" },
-        { value: "18", label: "Countries Served" },
-        { value: "4", label: "Design Awards" },
+        { value: "7+", label: "Years of Experience" },
+        { value: "80+", label: "Projects Completed" },
+        { value: "4", label: "Cities Served" },
+        { value: "Central FL", label: "Service Area" },
       ],
     },
     payments: {
@@ -392,10 +392,10 @@ export const translations = {
       para2:
         "Nuestro equipo de diseñadores, artesanos y gerentes de proyecto colaboran para crear interiores funcionales y profundamente considerados — espacios donde vivir se siente sin esfuerzo.",
       stats: [
-        { value: "12+", label: "Años de Experiencia" },
-        { value: "200+", label: "Proyectos Completados" },
-        { value: "18", label: "Países Atendidos" },
-        { value: "4", label: "Premios de Diseño" },
+        { value: "7+", label: "Años de Experiencia" },
+        { value: "80+", label: "Proyectos Completados" },
+        { value: "4", label: "Ciudades Atendidas" },
+        { value: "Central FL", label: "Área de Servicio" },
       ],
     },
     payments: {
@@ -634,10 +634,10 @@ export const translations = {
       para2:
         "Nossa equipe de designers, artesãos e gerentes de projeto colabora para criar interiores funcionais e profundamente pensados — espaços onde viver parece sem esforço.",
       stats: [
-        { value: "12+", label: "Anos de Experiência" },
-        { value: "200+", label: "Projetos Concluídos" },
-        { value: "18", label: "Países Atendidos" },
-        { value: "4", label: "Prêmios de Design" },
+        { value: "7+", label: "Anos de Experiência" },
+        { value: "80+", label: "Projetos Concluídos" },
+        { value: "4", label: "Cidades Atendidas" },
+        { value: "Central FL", label: "Área de Serviço" },
       ],
     },
     payments: {
